@@ -1,0 +1,47 @@
+/*
+
+.soyUnaClase{
+
+}
+
+#soyUnId{
+
+}
+
+*/
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.numeroDisplay{
+    text-align: right;
+    border: 2px solid #0000ff;
+    /* cuatro par[ametros> ancho del borde, tipo de borde(linea, entre cortado), color*/
+    border-radius: 8%;
+    margin: 3px;
+    padding: 3px;
+}
+
+body{
+    background-color: #dddddd;
+}
+
+#numeroActual{
+    background-color: #fff;
+}
+
+.botonCalc{
+    font-size: large;
+    font-weight: bold;
+    font-style: italic;
+    background-color: #fff;
+    color: brown;
+}
+
+.botonOp{
+    font-size: large;
+    background-color: #0000ff; 
+    color:#fff;
+}
