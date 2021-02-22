@@ -3,7 +3,6 @@ const{app, BrowserWindow} = require('electron')
 //app es como la app en si
 //browserwindow es una ventana de navegador
 //eventualmente todo esto requiere de electron.
-//comentario para porobar git
 function createWindow(){
     const ventana = new BrowserWindow({
         width:350,

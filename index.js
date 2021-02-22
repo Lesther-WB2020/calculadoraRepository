@@ -1,5 +1,5 @@
 const mousetrap = require('mousetrap');
-//comentario
+
 mousetrap.bind('1',clickUno);
 mousetrap.bind('2',clickDos);
 mousetrap.bind('+',clickSuma);
@@ -8,7 +8,7 @@ mousetrap.bind('+',clickSuma);
 document.getElementById('botonUno').addEventListener('click',clickUno);
 document.getElementById('botonDos').addEventListener('click',clickDos);
 document.getElementById('suma').addEventListener('click',clickSuma);
-//document.getElementById('botonUno').onclick=clickUno;
+//IT´S THE SAME THING LIKE: document.getElementById('botonUno').onclick=clickUno;
 
 var numActual = document.getElementById('numeroActual');
 var resultadoElemento = document.getElementById('resultado');
