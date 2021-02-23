@@ -37,9 +37,13 @@ document.getElementById('division').addEventListener('click',clickDivision);
 
 var numActual = document.getElementById('numeroActual');
 var resultadoElemento = document.getElementById('resultado');
+var elementoOperaciones = document.getElementById('operacionesHistorial');
 
 var actual = '';
 var resultado = 0;
+var contador=1;
+var contentHistoryNew = '';
+var primerNumero = '';
 
 function clickUno(){
     actual +=1;
@@ -94,32 +98,32 @@ function clickCero(){
 }
 
 function clickSuma(){
-    if(actual != ''){
+    if((actual != '')&&(resultadoElemento.innerHTML!=0)){
+        primerNumero = resultado;
         resultado += parseInt(actual);
-        actual='';
-        numActual.innerHTML='0';
-        resultadoElemento.innerHTML = resultado;
+            addItemToHistori(primerNumero,'+');
+    }else if(resultadoElemento.innerHTML==0){
+        //debido a que es el primero n'umero y 
+        //eventualmente no tiene con qui'en restarse.
+        firstTime();
     }
 }
 
 function clickResta(){
     if((actual != '')&&(resultadoElemento.innerHTML!=0)){
+        primerNumero = resultado;
         resultado -= parseInt(actual);
-        actual='';
-        numActual.innerHTML='0';
-        resultadoElemento.innerHTML = resultado;
+            addItemToHistori(primerNumero,'-');
     }else if(resultadoElemento.innerHTML==0){
-        //debido a que es el primero n'umero y eventualmente no tiene con qui'en restarse.
         firstTime();
     }
 }
 
 function clickProducto(){
     if((actual != '')&&(resultadoElemento.innerHTML!=0)){
+        primerNumero=resultado;
         resultado *= parseInt(actual);
-        actual='';
-        numActual.innerHTML='0';
-        resultadoElemento.innerHTML = resultado;
+            addItemToHistori(primerNumero,'*');
     }else if(resultadoElemento.innerHTML==0){
         firstTime();
     }
@@ -127,10 +131,9 @@ function clickProducto(){
 
 function clickDivision(){
     if((actual != '')&&(resultadoElemento.innerHTML!=0)){
+        primerNumero=resultado;
         resultado /= parseInt(actual);
-        actual='';
-        numActual.innerHTML='0';
-        resultadoElemento.innerHTML = resultado;
+            addItemToHistori(primerNumero,'/');
     }else if(resultadoElemento.innerHTML==0){
         firstTime();
     }
@@ -158,4 +161,13 @@ function clickClean(){
         resultado=0;
         numActual.innerHTML='0';
         resultadoElemento.innerHTML=resultado;
+}
+
+function addItemToHistori(prNumero,signoOperacion){
+        contentHistoryNew = contador + ') ' + prNumero +' '+signoOperacion+' '+ actual+' = ' + resultado;
+        contador++;
+        elementoOperaciones.innerHTML += contentHistoryNew + '<br>';
+        actual='';
+        numActual.innerHTML='0';
+        resultadoElemento.innerHTML = resultado;
 }

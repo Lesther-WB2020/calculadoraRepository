@@ -5,7 +5,7 @@ const{app, BrowserWindow} = require('electron')
 //eventualmente todo esto requiere de electron.
 function createWindow(){
     const ventana = new BrowserWindow({
-        width:350,
+        width:425,
         height:250,
         webPreferences:{
             nodeIntegration:true

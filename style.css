@@ -9,6 +9,17 @@ TIP PARA OLVIDADIZOS
     grid-template-columns: auto auto auto auto;
 }
 
+.all-buttons-calculadora{
+    float: left;
+}
+
+.grid-container-historial{
+    display: grid;
+    float: right;
+    background-color: black;
+    color: cornsilk;
+}
+
 .numeroDisplay{
     text-align: right;
     border: 2px solid #0000ff;
@@ -39,3 +50,4 @@ body{
     background-color: #0000ff; 
     color:#fff;
 }
+
