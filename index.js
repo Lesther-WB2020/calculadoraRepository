@@ -28,7 +28,6 @@ document.getElementById('botonCero').addEventListener('click',clickCero);
 document.getElementById('botonBack').addEventListener('click',clickBack);
 document.getElementById('botonClean').addEventListener('click',clickClean);
 
-
 document.getElementById('suma').addEventListener('click',clickSuma);
 document.getElementById('resta').addEventListener('click',clickResta);
 document.getElementById('producto').addEventListener('click',clickProducto);
@@ -41,7 +40,7 @@ var elementoOperaciones = document.getElementById('operacionesHistorial');
 
 var actual = '';
 var resultado = 0;
-var contador=1;
+var contador = 1;
 var contentHistoryNew = '';
 var primerNumero = '';
 
@@ -94,6 +93,8 @@ function clickCero(){
     if(actual!=''){
         actual += 0;
         numActual.innerHTML = actual;
+    }else{
+        alert('los ceros a la izquierda no valen nada.');
     }
 }
 
@@ -131,9 +132,9 @@ function clickProducto(){
 
 function clickDivision(){
     if((actual != '')&&(resultadoElemento.innerHTML!=0)){
-        primerNumero=resultado;
-        resultado /= parseInt(actual);
-            addItemToHistori(primerNumero,'/');
+            primerNumero=resultado;
+                 resultado /= parseInt(actual);
+                     addItemToHistori(primerNumero,'/');
     }else if(resultadoElemento.innerHTML==0){
         firstTime();
     }
